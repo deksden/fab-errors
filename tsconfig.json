@@ -1,0 +1,20 @@
+// tsconfig.json (для typecheck)
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "declaration": true, // Можно оставить, но не будет использоваться для сборки dist
+    "declarationMap": true,
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "lib": ["ES2022"],
+    "rootDir": ".", // Для корректной проверки путей
+    "noEmit": true  // Ключевой момент! Этот конфиг не для сборки.
+  },
+  "include": ["src/**/*", "test/**/*"],
+  "exclude": ["node_modules", "dist"]
+}

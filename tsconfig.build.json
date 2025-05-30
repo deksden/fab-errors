@@ -1,0 +1,12 @@
+// tsconfig.build.json (для сборки папки dist)
+{
+  "extends": "./tsconfig.json", // Наследуем общие настройки
+  "compilerOptions": {
+    "noEmit": false,        // Включаем генерацию файлов
+    "outDir": "./dist",
+    "rootDir": "./src",     // Собираем только из src
+    // declaration, declarationMap, sourceMap наследуются и будут true
+  },
+  "include": ["src/**/*"],    // Включаем только src
+  "exclude": ["node_modules", "dist", "test"] // Исключаем тесты из сборки
+}
