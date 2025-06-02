@@ -6,6 +6,7 @@
     "outDir": "./dist",
     "rootDir": "./src",     // Собираем только из src
     // declaration, declarationMap, sourceMap наследуются и будут true
+    "inlineSources": true
   },
   "include": ["src/**/*"],    // Включаем только src
   "exclude": ["node_modules", "dist", "test"] // Исключаем тесты из сборки

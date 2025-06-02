@@ -1,6 +1,6 @@
 {
   "name": "@fab33/fab-errors",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Modern error handling library with typed contexts, Error.cause chains, and ErrorSpecs",
   "type": "module",
   "main": "dist/index.js",
