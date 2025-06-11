@@ -12,7 +12,7 @@
  */
 
 import { describe, expect, it } from 'vitest'
-import { FabError, type ErrorSpec, hasErrorInChain, checkErrorChain, type ExpectedChainLevel } from '../src/index' // Импорт из точки входа
+import { FabError, type ErrorSpec, hasErrorInChain, checkErrorChain, type ExpectedChainLevel } from '../src/index.js'
 
 // --- Начало определения пользовательских ошибок ---
 

@@ -12,8 +12,8 @@
  */
 
 import { describe, expect, it } from 'vitest'
-import { FabError, type FabErrorJSON, type ErrorSpec } from '../src' // Импортируем FabErrorJSON
-import { formatMessage } from '../src/utils'
+import { FabError, type FabErrorJSON, type ErrorSpec } from '../src/index.js' // Импортируем FabErrorJSON
+import { formatMessage } from '../src/utils.js'
 
 interface TestContext1 {
   value: string

@@ -11,13 +11,14 @@
  */
 
 import { describe, expect, it } from 'vitest'
-import { FabError } from '../src/fab-error'
-import type { ErrorSpec } from '../src/error-spec'
-import { hasErrorInChain, checkErrorChain, type ExpectedChainLevel } from '../src/chain-utils'
+import { checkErrorChain, type ErrorSpec, type ExpectedChainLevel, FabError, hasErrorInChain } from '../src/index.js'
 
 // --- Тестовые данные ---
 const SPEC_LEVEL_3: ErrorSpec<{ detail: string }> = { code: 'L3_ERROR', messageTemplate: 'Level 3: {detail}' }
-const SPEC_LEVEL_2: ErrorSpec<{ info: string }> = { code: 'L2_ERROR', messageTemplate: 'Level 2 error with info {info}' }
+const SPEC_LEVEL_2: ErrorSpec<{ info: string }> = {
+  code: 'L2_ERROR',
+  messageTemplate: 'Level 2 error with info {info}'
+}
 const SPEC_LEVEL_1: ErrorSpec<{ reason: string }> = { code: 'L1_ERROR', messageTemplate: 'Level 1 because {reason}' }
 
 const errLvl3 = new FabError(SPEC_LEVEL_3, { detail: 'Innermost issue' })
@@ -29,12 +30,14 @@ const errWithStdCause = new FabError(SPEC_LEVEL_1, { reason: 'wrapping std error
 
 class CustomError extends Error {
   customField: string
+
   constructor (message: string, customField: string) {
     super(message)
     this.name = 'CustomError'
     this.customField = customField
   }
 }
+
 const customErrorCause = new CustomError('Custom error happened', 'extraData')
 const errWithCustomCause = new FabError(SPEC_LEVEL_1, { reason: 'wrapping custom' }, customErrorCause)
 
@@ -145,9 +148,9 @@ describe('chain-utils', () => {
     })
 
     it('должен выбросить ошибку, если expectedChain не массив', () => {
-      // @ts-expect-error Тестируем неверный тип аргумента
+      // @ts-ignore
       expect(() => checkErrorChain(errLvl1, null)).toThrow('checkErrorChain: expectedChain must be an array.')
-      // @ts-expect-error Тестируем неверный тип аргумента
+      // @ts-ignore
       expect(() => checkErrorChain(errLvl1, {})).toThrow('checkErrorChain: expectedChain must be an array.')
     })
 

@@ -11,8 +11,8 @@
  * v1.0.0 (2025-05-29): Первая реализация FabError с поддержкой Error.cause и типизированного контекста.
  */
 
-import type { ErrorSpec } from './error-spec'
-import { formatMessage } from './utils'
+import type { ErrorSpec } from './error-spec.js'
+import { formatMessage } from './utils.js'
 
 /**
  * Структура объекта, возвращаемого методом `toJSON()` класса `FabError`.

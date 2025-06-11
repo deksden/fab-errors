@@ -2,8 +2,8 @@
 {
   "compilerOptions": {
     "target": "ES2022",
-    "module": "ESNext",
-    "moduleResolution": "node",
+    "module": "NodeNext",
+    "moduleResolution": "nodenext",
     "declaration": true, // Можно оставить, но не будет использоваться для сборки dist
     "declarationMap": true,
     "sourceMap": true,

@@ -10,7 +10,7 @@
  * v1.0.0 (2025-05-29): Начальная реализация базовых ErrorSpec.
  */
 
-import type { ErrorSpec } from './error-spec'
+import type { ErrorSpec } from './error-spec.js'
 
 // --- Контексты для базовых ошибок ---
 
